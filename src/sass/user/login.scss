@@ -1,0 +1,97 @@
+@import "../var";
+
+.login-box {
+  height: 470px;
+  //antd的样式修改
+  .ant-tabs-nav .ant-tabs-tab {
+    @include size(16px);
+    padding-bottom: 30px;
+  }
+  .ant-btn-primary {
+    @extend .db;
+    @include wh(100%, 50px);
+    @include lh(50px);
+    @include ta;
+    @include size(14px);
+  }
+  //自己的css样式
+  .login-form {
+    //height: 350px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eeeeee;
+        .login-form-footer {
+            margin-top: 10px;
+            @extend .pr;
+            line-height: 20px;
+                .route-box {
+                    @extend .pa;
+                    height: 20px;
+                    right: 0;
+                    top: 0; 
+                    @include size(14px);
+                        a:nth-of-type(1){
+                            @extend .dib;
+                            padding: 0 14px;
+                            color: #AAAAAA;
+                            border-right: 1px solid #AAAAAA;
+                            @include ta();
+                        }
+                        a:nth-of-type(2){
+                            @extend .dib;
+                            padding-left: 14px;
+                            @include ta(right);
+                        }
+                }
+        }
+  }
+  .login-footer {
+    @include ta;
+    padding-top: 5px;
+    > img {
+      @include wh(96px, 96px);
+      @include size(14px);
+    }
+  }
+  .passwordLogin-box,
+  .codeLogin-box {
+    input {
+      @extend .db;
+      @include wh(370px, 50px);
+      @include size(14px);
+      padding-left: 20px;
+      border-radius: 4px;
+      border: 1px solid rgba(221, 221, 221, 1);
+      margin-bottom: 20px;
+      @include placeholder;
+        &:nth-of-type(1){
+            margin-top: 20px;
+        }
+        &:nth-of-type(2){
+            margin-bottom: 30px;
+        }
+    }
+  }
+  .codeLogin-box {
+      .code-box {
+          @extend .pr;
+          margin-bottom: 30px;
+          >s {
+            @include wh(120px, 20px);
+              @extend .pa;
+              @extend .db;
+              right: 0;
+              top: 50%;
+              margin-top: -10px;
+              @include ta;
+              border-left: 1px solid #DDDDDD;
+              color: #DDDDDD;
+              &.active {
+                color: #3A78EA;
+              }
+              &:hover {
+                  @extend .pointer;
+              }
+          }
+      }
+  }
+}

@@ -1,0 +1,49 @@
+.swiper-ads{
+  position: relative;
+  margin-top: 20px;
+  height:108px;
+  border:1px solid #EDEDED;
+  background: #FAFAFA;
+  overflow: hidden;
+  padding: 0 25px;
+  .swiper-container{
+    padding-top: 9px;
+    overflow: hidden;
+  }
+  .swiper-wrapper{
+    width: 1000%;
+    .swiper-slide{
+      float: left;
+      width: 385px;
+      height: 90px;
+      overflow: hidden;
+      a{
+        width: 350px;
+      }
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+  .swiper-prev,.swiper-next{
+    position: absolute;
+    width: 39px;
+    height: 108px;
+    line-height: 108px;
+    top: 0;
+    font-family: "thunder";
+    font-size: 20px;
+    text-align: center;
+    color: #3A78EA;
+    cursor: pointer;
+    background: #FAFAFA;
+    z-index: 1;
+    -webkit-user-select:none;
+  }
+  .swiper-prev{
+    left: 0;
+  }
+  .swiper-next{
+    right: 0;
+  }
+}

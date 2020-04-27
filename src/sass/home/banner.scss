@@ -1,0 +1,53 @@
+@import '../var.scss';
+
+.scaleBase {
+    transform: scale(1.1);
+    transition: all 100ms linear;
+}
+
+.banner-box {
+    @extend .w;
+    height: 600px;
+    margin-top: 20px;
+    //border-top: 20px solid $newYearBg;
+    @extend .pr;
+        img:hover{
+            @extend .pointer;
+        }
+        .left-box {
+            @include wh(600px,600px);
+            @extend .pa;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            img{
+                height:600px;
+            }
+        }
+        .right-top,
+        .right-buttom {
+            @extend .pa;
+            right: 0;
+            >div {
+                @extend .dib;
+                @include wh(300px,300px);
+                overflow: hidden;
+                img {
+                    height:300px;
+                }
+            }
+        }
+        .right-top {
+            top: 0;
+                .right {
+                    @extend .pr;
+                }
+        }
+        .right-buttom {
+            bottom:-4px;
+                .left {
+                    @extend .pr;
+                }
+        }
+
+}

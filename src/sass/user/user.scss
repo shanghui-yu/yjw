@@ -1,0 +1,80 @@
+@import "../var.scss";
+
+#userBgBox {
+  @extend .pa;
+  @include wh(100%, 100%);
+  @include bg(#f1f1f1);
+}
+
+.align {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.User-box {
+  .User-logo {
+    @include wh(64px, 68px);
+    @include bgImg("utils", "userLogo");
+    @extend .pr;
+    z-index: 10;
+    @extend .align;
+    top: 100px;
+    &:hover {
+      @extend .pointer;
+    }
+  }
+  .User-content-box {
+    @extend .pr;
+    @extend .align;
+    top: 140px;
+    padding: 30px 40px;
+    width: 450px;
+    @include bg(#fff);
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+    .ant-form-item-label > label {
+      color: #aaaaaa;
+    }
+    .ant-input {
+      height: 40px;
+    }
+    .submit-box {
+      margin-top: 20px;
+      .ant-btn {
+        @include wh(370px, 50px);
+      }
+    }
+    .ant-form-item-control {
+      @include lh(25px);
+    }
+    .ant-checkbox-wrapper {
+      margin: 10px 0;
+    }
+    .register-agree {
+      @extend .pr;
+      .agree-text {
+        @extend .pa;
+        width: 345px;
+        @include lh(15px);
+        right: 0;
+        top: 10px;
+      }
+    }
+    .rAf-code-box {
+        .ant-input {
+            width: 225px;
+        }
+        .ant-btn-primary {
+            @include wh(135px,40px);
+            margin-left: 10px;
+        }
+    }
+    .jump-box {
+        margin-top: 10px;
+        color: #AAAAAA;
+        @include ta;
+    }
+  }
+}
+

@@ -1,0 +1,204 @@
+@import "./var.scss";
+
+.MyHeader-box {
+  @include wh(100%, 80px);
+  @include bg();
+  @include shadow(0px 4px 6px 0px rgba(241, 241, 241, 0.5));
+  @extend .pf;
+  z-index: 100;
+  top: 0;
+  &.newYear {
+    @include bgImg("newYear", "bg", "png", 100%);
+    .right-box {
+      color: #fff;
+    }
+    .right-box span:nth-of-type(1) i {
+      border-right: 1px solid #fff;
+    }
+
+    //新年
+    &::after,
+    &::before {
+      content: "";
+      @extend .db;
+      @include wh(340px, 100%);
+      @extend .pf;
+      top: 80px;
+      z-index: -10;
+      // @media screen and (max-width:1900px) {
+      //   display: none;
+      // }
+      @media screen and (min-width: 2000px) {
+        @include wh(500px, 100%);
+      }
+      @media screen and (min-width: 1700px) and (max-width: 1900px) {
+        @include wh(260px, 100%);
+      }
+      @media screen and (max-width: 1700px) {
+        display: none;
+      }
+    }
+    &::after {
+      @include bgImg("newYear", "left", "png", 100%);
+      left: 0;
+    }
+    &::before {
+      @include bgImg("newYear", "right", "png", 100%);
+      right: 0;
+    }
+    .logo-box {
+      //新年
+      &::after {
+        content: "";
+        @extend .dib;
+        @extend .pa;
+        @include wh(210px, 32px);
+        @include bgImg("newYear", "happy", "png", 100%);
+        @extend .pa;
+        left: 250px;
+        top: 50%;
+        margin-top: -16px;
+      }
+    }
+  }
+
+  .content-box {
+    @extend .w;
+    height: 80px;
+    @extend .pr;
+    .logo-box {
+      @include wh(170px, 80px);
+      @extend .table;
+      @include va;
+      @include size(0);
+      &:hover {
+        @extend .pointer;
+      }
+
+      &::before {
+        content: "";
+        @extend .dib;
+        @extend .pa;
+        left: 210px;
+        @include wh(1px, 55px);
+        @include bg(#eeeeee);
+      }
+      img {
+        @include va;
+        height: 60px;
+        @extend .dib;
+      }
+    }
+  }
+
+  .search-box {
+    @include wh(310px, 80px);
+    @include bgImg("utils", "middleBg", "png", 100%);
+    @extend .pa;
+    top: 0;
+    right: 200px;
+    .seach {
+      @include wh(310px, 80px);
+      //@extend .pa;
+      @extend .table;
+      @include va;
+      .ant-btn-primary {
+        width: 60px;
+        @include size(22px);
+      }
+    }
+  }
+
+  .right-box {
+    @include size(16px);
+    color: #666666;
+    @extend .pa;
+    right: 0;
+    top: 0;
+    span {
+      @extend .dib;
+      @include lh(80px);
+      &:nth-of-type(1) {
+        i {
+          border-right: 1px solid #666;
+          margin-right: 20px;
+          padding-right: 20px;
+        }
+      }
+      i {
+        @extend .pointer;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .user-info {
+    padding: 25px 0;
+    position: relative;
+    line-height: 30px;
+    z-index: 99;
+    .avatar {
+      margin-right: 5px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-block;
+      vertical-align: top;
+      overflow: hidden;
+      background: #fff;
+      img {
+        max-width: 100%;
+      }
+    }
+    .nickname {
+      color: #333333;
+      &:hover {
+        text-decoration:none;
+      }
+    }
+    .slide-menu {
+      position: absolute;
+      left: 5px;
+      top: 60px;
+      padding: 0 10px;
+      background: #fff;
+      box-shadow: 0px 4px 6px rgba(19, 19, 19, 0.16);
+      display: none;
+      li {
+        padding: 5px 0;
+        width: 95px;
+        font-size: 14px;
+        text-align: center;
+        border-bottom: 1px solid #ededed;
+        cursor: pointer;
+      }
+    }
+    &:hover {
+      .slide-menu {
+        display: block;
+      }
+    }
+  }
+
+  .header-tabs {
+    @include size(16px);
+    @extend .pa;
+    display: inline-block;
+    top: 0;
+    left: 22%;
+    li {
+      float: left;
+      @include lh(80px);
+      margin-right: 42px;
+      a {
+        color: #555555;
+        &:hover {
+          color: #3a79eb;
+        }
+      }
+      .active {
+        color: #3a79eb;
+      }
+    }
+  }
+}

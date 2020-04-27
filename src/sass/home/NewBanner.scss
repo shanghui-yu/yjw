@@ -1,0 +1,24 @@
+.home-focus{
+    margin-top: 20px;
+    position: relative;
+    padding-left: 600px;
+    height: 600px;
+    img{
+        max-width: 100%;
+        vertical-align: top;
+    }
+    .first{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 600px;
+        height: 600px;
+        overflow: hidden;
+    }
+    .flex a{
+        float: left;
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+    }
+}

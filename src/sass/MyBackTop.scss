@@ -1,0 +1,63 @@
+@import './var.scss';
+
+.MyBackTop-box {
+    @media screen and (max-width:1500px){
+        display: none;
+    }
+    @include wh(80px,180px);
+    @extend .pf;
+    top: 50%;
+    margin-top: -90px;
+    right: 60px;
+    z-index: 100;
+    box-shadow:0px 1px 10px 5px rgba(0,0,0,.1) ;
+    opacity: 1;
+    transition: opacity .5s ease;
+    overflow: hidden;
+        &.fadeOut{
+            opacity: 0;
+            height: 0;
+        }
+        .MyBackTop-top {
+            height:70px;
+            @extend .pr;
+            &:hover{
+                @extend .pointer;
+            }
+            &::after{
+                content:'';
+                @extend .db;
+                @include wh(20px,10px);
+                @include bgImg('utils','backArrow');
+                left: 50%;
+                margin-left: -10px;
+                top: 20px;
+                @extend .pa;
+            }
+            &::before{
+                content:'返回顶部';
+                @extend .db;
+                @extend .pa;
+                bottom: 0;
+                left: 50%;
+                margin-left: -30px;
+                width: 60px;
+                @include size(14px);
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+        .MyBackTop-bottom {
+            @include wh(80px,110px);
+            @extend .table;
+            @include va;
+            @include ta;
+                img {
+                    @include wh(60px,60px);
+                }
+                >h6{
+                    @include size(14px);
+                    @include ta;
+                }
+        }
+}

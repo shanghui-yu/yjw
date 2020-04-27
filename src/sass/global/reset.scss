@@ -1,0 +1,91 @@
+
+@font-face {
+  font-family: 'thunder';
+  src: url('//at.alicdn.com/t/font_1729028_8rhltksk0gl.eot');
+  src: url('//at.alicdn.com/t/font_1729028_8rhltksk0gl.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1729028_8rhltksk0gl.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1729028_8rhltksk0gl.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1729028_8rhltksk0gl.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1729028_8rhltksk0gl.svg#iconfont') format('svg');
+}
+
+.wrapper{
+  margin: 0 auto;
+  width: 1200px;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  .figure {
+    img {
+      transform: scale(1);
+      transition: transform .3s ease-in-out;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  .hidden {
+    display: none
+  }
+
+  .ad-box {
+    div {
+      position: relative;
+      margin-top: 20px;
+
+      &:after {
+        position: absolute;
+        left: 10px;
+        bottom: 5px;
+        padding: 2px 3px;
+        font-size: 10px;
+        line-height: 10px;
+        content: "广告";
+        font-size: 12px;
+        color: rgba(255, 255, 255, .6);
+        border: 1px solid rgba(255, 255, 255, .6);
+        border-radius: 2px;
+      }
+
+      img {
+        vertical-align: top;
+      }
+    }
+  }
+  .news-list {
+    li {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &:before {
+        margin: 10px 5px 0 0;
+        content: "";
+        width: 4px;
+        height: 4px;
+        background: #CDD2D4;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+  }
+  .load-more-button {
+    margin: 50px auto 0;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    border: 1px solid #DEDEDE;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  .nothing {
+    text-align: center;
+  }
+}
+

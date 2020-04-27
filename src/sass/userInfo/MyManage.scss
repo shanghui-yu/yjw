@@ -1,0 +1,31 @@
+@import '../var';
+@import "./formList.scss";
+
+.myspace {
+  margin-top: 20px;
+  float: right;
+  width: 992px;
+  padding: 30px;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(117, 117, 117, 0.16);
+
+  .header {
+    .title {
+      font-size: 22px;
+      line-height: 30px;
+      color: rgba(102, 102, 102, 1);
+      font-weight: normal;
+      padding-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: rgba(102, 102, 102, 1);
+      font-weight: normal;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(237, 237, 237, 0.93);
+      line-height: 25px;
+    }
+  }
+}

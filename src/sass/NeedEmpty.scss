@@ -1,0 +1,10 @@
+@import './var';
+
+#NeedEmpty {
+    display: table-cell;
+    @include va();
+    background:$themeBg;
+    .ant-empty-normal {
+        margin: 0;
+    }
+}

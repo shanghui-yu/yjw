@@ -1,0 +1,166 @@
+@import './var';
+
+@import "./global/reset.scss";
+@import "./global/layout.scss";
+@import "./stands/content-detail.scss";
+
+.wrapper {
+  .tupu-list {
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid #EDEDED;
+    background: #fff;
+
+    thead th {
+      height: 56px;
+      line-height: 56px;
+      font-weight: 400;
+      font-size: 18px;
+      text-align: center;
+
+      &:first-child {
+        padding-left: 10px;
+        text-align: left;
+      }
+    }
+
+    tbody td {
+      padding: 20px 0;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      border-top: 1px solid #EDEDED;
+    }
+
+    .figure-news {
+      position: relative;
+      padding-left: 215px;
+      height: 117px;
+      display: block;
+      text-align: left;
+      font-size: 16px;
+
+      .figure {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 205px;
+        height: 117px;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      a {
+        line-height: 24px;
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 14px;
+        color: rgba(134, 134, 134, 1);
+        font-weight: 400;
+      }
+    }
+  }
+
+  .tupu-figure-news-list {
+    padding: 0 5px 20px 10px;
+    border: 1px solid #EDEDED;
+    background: #fff;
+
+    li {
+      margin-top: 20px;
+      position: relative;
+      padding-left: 150px;
+      height: 96px;
+
+      .figure {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 140px;
+        height: 96px;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .figcaption {
+        font-size: 13px;
+        display: block;
+      }
+
+      p {
+        margin-top: 5px;
+        font-size: 11px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .tupu-figure-intro {
+    position: relative;
+    padding: 20px 20px 20px 245px;
+    margin-top: 20px;
+    height: 144px;
+    border: 1px solid #EDEDED;
+    background: #fff;
+    box-sizing: content-box;
+
+    .figure {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      width: 205px;
+      height: 144px;
+      overflow: hidden;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 26px;
+      font-weight: 400;
+    }
+
+    .about-info {
+      margin-top: 10px;
+      padding-top: 10px;
+      line-height: 22px;
+      color: #666;
+      border-top: 1px dashed #C8C8C8;
+
+      span {
+        margin-right: 20px;
+        font-size: 16px;
+      }
+    }
+
+    .tools {
+      margin-top: 22px;
+      height: 26px;
+      overflow: hidden;
+
+      .button {
+        float: right;
+        padding: 0 37px;
+        line-height: 26px;
+        color: #fff;
+        background: #3A78EA;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .detail {
+    margin-top: 20px;
+  }
+}

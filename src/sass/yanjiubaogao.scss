@@ -1,0 +1,112 @@
+@import './var';
+@import "./global/reset.scss";
+@import "./global/layout.scss";
+
+.model .category-box{
+  border:1px solid #EDEDED;
+  box-shadow:  none;
+  dl{
+    padding-left: 0;
+  }
+}
+
+.report-figure-news-list{
+  overflow: hidden;
+  .clearfix{
+    width: 120%;
+    li{
+      float: left;
+      margin:20px 20px 0 0;
+      width: 285px;
+      overflow: hidden;
+      background:rgba(250, 250, 250, 1);
+      border:1px solid rgba(237, 237, 237, 1);
+    }
+    .figure{
+      width: 285px;
+      height: 163px;
+      display: block;
+      overflow: hidden;
+      img{
+        max-width: 100%;
+      }
+    }
+    .caption{
+      margin-top: 5px;
+      font-size: 14px;
+      display: block;
+      line-height: 20px;
+      padding: 0 10px;
+    }
+    .footer{
+      margin-top: 5px;
+      overflow: hidden;
+      color: #999;
+      height: 18px;
+      line-height: 18px;
+      padding: 0px 10px 7px;
+      box-sizing: content-box;
+      .total{
+        float: right;
+        &:before{
+          margin-right: 2px;
+          content: "载";
+          font-family: "thunder";
+        }
+      }
+      .tags{
+        font-size: 0;
+        a,span{
+          color: #999;
+          font-size: 12px;
+          margin-right: 10px; 
+        }
+      }
+    }
+  }
+}
+
+.reports-cloumn-wrap{
+  overflow: hidden;
+  .clearfix{
+    width: 120%;
+  }
+}
+.reports-cloumn{
+  margin:20px 30px 0 0;
+  float: left;
+  width: 378px;
+  background:#FAFAFA;
+  border: 1px solid #EDEDED;
+  overflow: hidden;
+  > .header{
+    padding: 10px 10px 0;
+    height: 22px;
+    line-height: 22px;
+    font-size:16px;
+  }
+  .reports-cloumn-list{
+    overflow: hidden; 
+    li{
+      padding:20px 10px 10px;
+      font-size:14px;
+      line-height: 22px;
+      overflow: hidden;
+      border-top: 1px solid #EDEDED;
+      .figure{
+        margin-right: 10px;
+        float: left;
+        width: 140px;
+        height: 96px;
+        overflow: hidden;
+        img{
+          max-width: 100%;
+        }
+      }
+      &:first-child{
+        padding: 20px 10px 20px 0;
+        border: 0 none
+      }
+    }
+  }
+}

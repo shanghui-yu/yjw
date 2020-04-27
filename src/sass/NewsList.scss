@@ -1,0 +1,68 @@
+@import './var';
+
+.NewsList-box {
+    width: 100%;
+    @extend .db;
+    @extend .pr;
+    .NewsList-content {
+        padding:5px 0 5px 25px;
+        max-height:30px;
+        @include size(14px);
+        overflow: hidden;
+        &.needBig {
+            @include size(16px); 
+            font-weight: 700;
+            + i {
+                @include bg($newYear);
+            }
+        }
+        &:hover {
+            @extend .pointer;
+            color: $newYear;
+            text-decoration: underline;
+            + i {
+                @include bg($newYear);
+            }
+        }
+        &.two-height {
+            max-height:60px;
+        }
+    }
+    .NewsList-photo{
+        height:100px;
+        padding:5px 0 5px 10px;
+        margin-bottom:10px;
+        img,
+        s {
+            @extend .dib;
+            @include va;
+        }
+        s {
+            @include wh(110px,100px);
+            @include size(12px);
+            color: #a2a1a1;
+            @include va;
+            margin-left: 10px;
+            overflow: hidden;
+        }
+        img {
+            @include wh(140px,100px);
+        }
+        &:hover {
+            @extend .pointer;
+            s {
+               color:$newYear;
+               text-decoration: underline;
+            }
+        }
+    }
+    .NewsList-radius {
+        @include wh(4px,4px);
+        @include radius(50%);
+        @include bg(#CDD2D4);
+        @extend .pa;
+        top: 50%;
+        //margin-top: -2px;
+        left: 10px;
+    }
+}

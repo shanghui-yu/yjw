@@ -1,0 +1,109 @@
+@import '../var.scss';
+
+
+.NewsLeftModules-box {
+    padding-top: 4px;
+    width: 880px;
+    height: 436px;
+    overflow: hidden;
+        .NewsLeftModules-left-box,
+        .NewsLeftModules-right-box {
+            @extend .fl;
+            width:430px;
+        }
+        .NewsLeftModules-right-box {
+            margin-top: -10px;
+        }
+
+}
+
+
+//左侧三张图的样式
+.LeftThreeImg-box {
+        >a:nth-of-type(1) {
+            @extend .db;
+            @include wh(100%,245px);
+            &:hover {
+                @extend .pointer;
+            }
+            h4 {
+                height: 20px;
+                @include ta;
+                @include size(16px);
+                margin-top: -40px;
+                color: #fff;
+                overflow: hidden;
+            }
+            img {
+                height:245px;
+            }
+        }
+        >a:nth-of-type(2),
+        >a:nth-of-type(3){
+            margin-top: 20px;
+            //width: 205px;
+            @include wh(205px,180px);
+            @include va;
+            @extend .dib;
+            @include ta();
+            &:hover {
+                @extend .pointer;
+            }
+            img {
+                height:117px;
+            }
+            h4 {
+                padding: 10px;
+                @extend .dib;
+                @include ta;
+                @include size(14px);
+                @include ta(left);
+            }
+        }
+        >a:nth-of-type(2){
+            margin-right: 20px;
+        }
+}
+
+//左侧一张图的显示
+.LeftOneImg-box {
+    @extend .db;
+    &:hover{
+        @extend .pointer;
+    }
+    .LeftOneImg-img-box {
+        img {
+            height: 245px;
+        }
+    }
+    .LeftOneImg-title {
+        @include size(18px);
+        padding-left: 10px;
+        overflow: hidden;
+        margin-top: 20px;
+        font-weight: 700;
+    }
+    .LeftOneImg-subTitle {
+        width: 100%;
+            i {
+                @extend .dib;
+                color: #C0C0C0;
+                width: 50%;
+                @include size(13px);
+                padding: 0 10px;
+                &:nth-of-type(1){
+                    @include ta(left);
+                }
+                &:nth-of-type(2){
+                    @include ta(right);
+                }
+            }
+    }
+    .LeftOneImg-content {
+        max-height: 88px;
+        overflow: hidden;
+        padding: 0 10px;
+        color: #a2a1a1;
+        @include size(14px);
+    }
+}

@@ -1,0 +1,46 @@
+.module-section{
+  float: left;
+  width: 880px;
+}
+.module-side{
+  float: right;
+  width: 300px;
+}
+
+.model{
+  margin-top: 20px;
+  border: 1px solid #EDEDED;
+  background: #FAFAFA;
+  > .header{
+    padding: 10px 5px;
+    overflow: hidden;
+    line-height: 30px;
+    .view-more{
+      float: right;
+      color: #3A78EA;
+      font-weight: 700;
+      font-size: 26px;
+      font-family: "thunder";
+      &:hover{
+        text-decoration: none;
+      }
+    }
+    h3{
+      font-size: 22px;
+      font-weight: 500;
+      color: #3A78EA;
+      &:before{
+        margin:4px 10px 0 0;
+        content: "";
+        width: 3px;
+        height: 20px;
+        border-radius:2px;
+        display: inline-block;
+        vertical-align: top;
+        background: #3A78EA;
+      }
+    }
+  }
+}
+
+

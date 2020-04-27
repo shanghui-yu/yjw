@@ -1,0 +1,149 @@
+.NewPage-box {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    .Wrap {
+        width: 1200px;
+        margin: 0 auto;
+        .imgWrap {
+            margin-top: 20px;
+            position: relative;
+            img {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+            .categoryBtn {
+                position: absolute;
+                width: 130px;
+                height: 44px;
+                background: #3F5BC6;
+                text-align: center;
+                left: 43px;
+                top: 122px;
+                a {
+                    color: white;
+                    line-height: 44px;
+                    font-size: 16px;
+                }
+            }
+            .right-box {
+                position: absolute;
+                right: 6px;
+                top: 37px;
+                .list {
+                    float: left;
+                    margin-right: 15px;
+                    .title {
+                        color:#221815;
+                        font-size: 20px;
+                        width:169px;
+                        height:37px;
+                        background:#eee;
+                        border-radius:19px;
+                        text-align: center;
+                        line-height: 37px;
+                    }
+                    ul {
+                        display: none;
+                        width:128px;
+                        height:104px;
+                        margin-left: 21px;
+                        background: #fff;
+                        border-radius:4px;
+                        padding-top: 13px;
+                        li {
+                            cursor: pointer;
+                            text-align: center;
+                            color: #222222;
+                            font-size: 14px;
+                            &:nth-child(2), &:nth-child(3) {
+                                margin-top: 11px;
+                            }
+                        }
+                    }
+                    &:hover ul {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+.ant-dropdown {
+    left: 89.5px!important;
+    top: 266px!important;
+    .ant-dropdown-menu {
+        background: #3F5BC6;
+        border-radius: 0;
+        opacity: .7;
+        .ant-dropdown-menu-submenu {
+            background: #3F5BC6;
+            opacity: .7;
+            .ant-dropdown-menu-submenu-title {
+                color: white;
+                margin-left: 20px;
+            }
+            .anticon {
+                display: none;
+            }
+        }
+        .ant-dropdown-menu-submenu:hover {
+            background: #3F5BC6;
+            opacity: 1;
+        }
+        .ant-dropdown-menu-submenu-title:hover {
+            background: #3F5BC6;
+            opacity: 1;
+        }
+    }
+    
+}
+.ant-dropdown-menu-submenu-popup ul {
+    margin-left: 0;
+    background:rgba(63,91,198,1);
+    border-radius: 0;
+    .ant-dropdown-menu-item {
+        color: white;
+    }
+    .ant-dropdown-menu-item:hover  {
+        background:rgba(122,150,255,1);
+    }
+    
+}
+.ant-dropdown-menu-submenu-popup {
+    left: 285px!important;
+}
+@media screen and (min-width:1366px) and  (max-width:1439px){
+    .ant-dropdown {
+        left: 117.5px!important;
+    }
+    .ant-dropdown-menu-submenu-popup {
+        left: 315px!important;
+    }
+}
+@media screen and (min-width:1440px) and  (max-width:1519px){
+    .ant-dropdown {
+        left: 154.5px!important;
+    }
+    .ant-dropdown-menu-submenu-popup {
+        left: 352px!important;
+    }
+}
+@media screen and (min-width:1519px) {
+    .ant-dropdown {
+        left: 202px!important;
+    }
+    .ant-dropdown-menu-submenu-popup {
+        left: 401px!important;
+    }
+}
+@media screen and (min-width:1921px) {
+    .ant-dropdown {
+        left: 459.5px!important;
+    }
+    .ant-dropdown-menu-submenu-popup {
+        left: 657px!important;
+    }
+}
+
+

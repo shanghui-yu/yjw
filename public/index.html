@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="雷霆应急网是应急领域专业门户网站，旨在打造成国内专业的综合性应急产业信息发布服务平台，提供涵盖应急信息发布、应急产品、解决方案、应急科普、培训以及分析报告等方面内容，举办各类线下、线上的展会与活动，定制专业精准的品牌塑造推广计划，为广大网友及时获取应急产业相关信息提供全方位服务。" />
+    <meta name="keywords" content="雷霆应急网,应急网,应急, 应急新闻, 应急展会,应急培训,应急解决方案,预警,防灾减灾,预防防护,突发事件,救助救援">
+    <title>雷霆应急网-应急领域专业门户网站</title>
+    <script>
+      (function() {
+        //判断是否是ie
+        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+        var rootDom = document.getElementById("root");
+        if (
+          userAgent.indexOf("Trident") !== -1 ||
+          userAgent.indexOf("MSIE") !== -1
+        ) {
+          return false;
+        }
+        handleAddListener("load", getTiming);
+
+        function handleAddListener(type, fn) {
+          if (window.addEventListener) {
+            window.addEventListener(type, fn);
+          } else {
+            window.attachEvent("on" + type, fn);
+          }
+        }
+
+        function getTiming() {
+          try {
+            var time = performance.timing;
+            var timingObj = {};
+
+            var loadTime = (time.loadEventEnd - time.loadEventStart) / 1000;
+
+            if (loadTime < 0) {
+              setTimeout(function() {
+                getTiming();
+              }, 200);
+              return;
+            }
+
+            timingObj["重定向时间"] =
+              (time.redirectEnd - time.redirectStart) / 1000;
+            timingObj["DNS解析时间"] =
+              (time.domainLookupEnd - time.domainLookupStart) / 1000;
+            timingObj["TCP完成握手时间"] =
+              (time.connectEnd - time.connectStart) / 1000;
+            timingObj["HTTP请求响应完成时间"] =
+              (time.responseEnd - time.requestStart) / 1000;
+            timingObj["DOM开始加载前所花费时间"] =
+              (time.responseEnd - time.navigationStart) / 1000;
+            timingObj["DOM加载完成时间"] =
+              (time.domComplete - time.domLoading) / 1000;
+            timingObj["DOM结构解析完成时间"] =
+              (time.domInteractive - time.domLoading) / 1000;
+            timingObj["脚本加载时间"] =
+              (time.domContentLoadedEventEnd -
+                time.domContentLoadedEventStart) /
+              1000;
+            timingObj["onload事件时间"] =
+              (time.loadEventEnd - time.loadEventStart) / 1000;
+            timingObj["页面完全加载时间"] =
+              timingObj["重定向时间"] +
+              timingObj["DNS解析时间"] +
+              timingObj["TCP完成握手时间"] +
+              timingObj["HTTP请求响应完成时间"] +
+              timingObj["DOM结构解析完成时间"] +
+              timingObj["DOM加载完成时间"];
+            var arr = [];
+            for (item in timingObj) {
+              arr.push(item + ":" + timingObj[item] + "秒(s)");
+            }
+            console.log(arr);
+          } catch (e) {
+            console.log(timingObj);
+            console.log(performance.timing);
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+@import './var';
+@import "./global/reset.scss";
+@import "./global/layout.scss";
+
+@import "./stands/content-detail.scss";
+
+.icon-navs{
+  margin-top: 20px;
+  .item{
+    float: left;
+    width: 25%;
+    a{
+      margin-left: 50px;
+      padding-left: 60px;
+      height: 50px;
+      display: block;
+      background: url("../imgs/weiketang-icons.png") no-repeat;
+      overflow: hidden;
+      text-decoration: none;
+    }
+    h4{
+      margin-top: 10px;
+      height:20px;
+      font-size:14px;
+      line-height: 20px;
+    }
+    p{
+      margin-top: 2px;
+      height:14px;
+      line-height: 14px;
+      font-size:10px;
+      color: #666;
+    }
+    .zhuanjiajiangzuo{
+      background-position:  0 0;
+    }
+    .qiyejieshao{
+      background-position: 0 -50px;
+    }
+    .chanpinyanjiu{
+      background-position: 0 -99px;
+    }
+    .yingjizhishi{
+      background-position: 0 -150px;
+    }
+  }
+}
+
+.category-box{
+  border:1px solid #EDEDED;
+  box-shadow:  none;
+}
+.kecheng-figure-news-list{
+  margin-top: -16px;
+  overflow: hidden;
+  .clearfix{
+    width: 120%;
+    li{
+      float: left;
+      margin:20px 20px 0 0;
+      width: 285px;
+      overflow: hidden;
+    }
+    .figure{
+      width: 285px;
+      height: 163px;
+      display: block;
+      overflow: hidden;
+      img{
+        max-width: 100%;
+      }
+    }
+    .caption{
+      margin-top: 5px;
+      font-size: 14px;
+      display: block;
+      line-height: 20px;
+    }
+    .footer{
+      margin-top: 5px;
+      overflow: hidden;
+      color: #999;
+      height: 18px;
+      line-height: 18px;
+      .total{
+        float: right;
+        &:before{
+          margin-right: 2px;
+          content: "看";
+          font-family: "thunder";
+        }
+      }
+      .tags{
+        font-size: 0;
+        a,span{
+          color: #999;
+          font-size: 12px;
+          margin-right: 10px; 
+        }
+      }
+    }
+  }
+}
+
+.video-container{
+  margin-top: 20px;
+  background: #333;
+  overflow: hidden;
+  color: #fff;
+  .video-list{
+    padding: 0 10px;
+    width:300px;
+    float: right;
+    height: 700px;
+    overflow-y: auto;
+    li{
+      margin-top: 20px;
+      font-size:14px;
+      line-height:24px;
+      a{
+        color: #fff;
+      }
+      a:hover, span{
+        color: #538BF1;
+      }
+    }
+  }
+  .video-content{
+    width: 880px;
+    .video{
+      height: 564px;
+      background: #000;
+    }
+    .content{
+      padding:20px;
+      h3{
+        min-height:30px;
+        font-size:22px;
+        line-height: 30px;
+        font-weight: 400;
+        color: #fff;
+      }
+      p{
+        margin-top: 10px;
+        line-height: 22px;
+        overflow: hidden;
+        span{
+          margin-right: 40px;
+          font-size:16px;
+        }
+      }
+    }
+  }
+  
+}
+
+.module{
+  margin-top: 20px;
+}
+.contact{
+  padding: 0 10px;
+  font-size:14px;
+  height:48px;
+  line-height: 48px;
+  border: 1px solid #EDEDED;
+  display: block;
+  &:before{
+    margin-right: 5px;
+    color: #538BF1;
+    content: "话";
+    font-family: "thunder";
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+

@@ -1,0 +1,40 @@
+@import '../var.scss';
+
+.userInfo-menu-box {
+    @extend .w;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    .left-box {
+        float: left;
+        width: 180px;
+        background: #fff;
+        padding: 10px 0;
+        .userInfo-navlink-style {
+            display: block;
+            color: #333333;
+            font-size: 14px;
+            text-align: left;
+            padding: 10px 10px 10px 20px;
+            font-weight: 400;
+            &.big {
+                font-size: 16px;
+                font-weight: 500;
+                border-top:1px solid #EEEEEE; 
+            }
+            &:hover {
+                text-decoration: none;
+                //color: #3A78EA;
+            }
+            &.active {
+                color: #3A78EA;
+            }
+        }
+    }
+    .right-box {
+        float: right;
+        margin-left: 20px;
+        width: 990px;
+        background: #fff;
+    }
+}

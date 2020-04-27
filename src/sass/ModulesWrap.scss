@@ -1,0 +1,62 @@
+@import './var';
+
+//盒子内容
+.ModulesWrap-box {
+    width: 100%;
+    overflow: hidden;
+    color: $newYear;
+    @include size(22px);
+    //@include bg($newYearBg);
+    background: #FAFAFA;
+    border: 1px solid $border;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin: 20px auto;
+    //border-top: 20px solid $newYearBg;
+        >h4 {
+            height: 54px;
+            padding-left: 22px;
+            font-weight: 700;
+            @include lh(54px);
+            color: $newYear;
+            @extend .pr;
+                &::after {
+                    content:'';
+                    @extend .db;
+                    @extend .pa;
+                    @include wh(3px,20px);
+                    @include bg($newYear);
+                    left: 10px;
+                    top: 50%;
+                    margin-top: -10px;
+                    border-radius:4px;
+                }
+                // &::after {
+                //     content:'';
+                //     @extend .db;
+                //     @extend .pa;
+                //     @include wh(22px,16px);
+                //     @include bgImg('newYear','TitleImg');
+                //     left: 10px;
+                //     top: 50%;
+                //     margin-top: -8px;
+                // }
+                i:hover{
+                    cursor: default;
+                }
+                a {
+                    @extend .db;
+                    @include wh(25px,5px);
+                    //@include bgImg('newYear','newYearLookMore');
+                    @include bgImg('utils','lookMore');
+                    @extend .pa;
+                    right: 10px;
+                    top: 50%;
+                    margin-top: -2px;
+                    &:hover {
+                        @extend .pointer;
+                    }
+                }
+        }
+}
+

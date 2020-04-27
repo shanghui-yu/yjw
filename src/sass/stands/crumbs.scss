@@ -1,0 +1,23 @@
+.crumbs{
+  margin-top: 20px;
+  height: 20px;
+  font-size: 14px;
+  overflow: hidden;
+  a,span{
+    margin: 0 6px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  a{
+    &:first-child{
+      margin-left: 0;
+    }
+    color: #333;
+    &:hover{
+      color: #3A78EA;
+    }
+  }
+  span{
+    color: #3A78EA;
+  }
+}

@@ -1,0 +1,33 @@
+.detail{
+  padding: 0 20px;
+  border: 1px solid #EDEDED;
+  background: #fff;
+  .tabs{
+    height: 59px;
+    border-bottom: 1px solid #EDEDED;
+    span{
+      margin-right: 20px;
+      position: relative;
+      padding-bottom: 2px;
+      height: 58px;
+      line-height: 58px;
+      font-size:20px;
+      display: inline-block;
+      vertical-align: top;
+      &:hover, &.current{
+        cursor: pointer;
+        padding: 0;
+        color: #3A78EA;
+        border-bottom: 2px solid #3A78EA;
+      }
+    }
+  }
+  .contents{
+    padding-bottom: 20px;
+    font-size:18px;
+    line-height: 28px;
+    p{
+      margin-top: 20px;
+    }
+  }
+}
