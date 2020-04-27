@@ -11,7 +11,7 @@ if(urlType == 'sit'){
 } else if (urlType == "pro") {
   baseURL = "https://www.86yingji.com";
 }
- baseURL = "";
+window.APIURL = "http://localhost:3001"
 let instance = axios.create({
   baseURL,
 });

@@ -52,9 +52,15 @@ export interface NewsListObj {
   imgUrl: string[];
   newsIntroduction: string;
 }
-export interface ChanpintupuListObj {
-  graphId: string | number;
-  graphTitle: string;
-  graphPath: string;
+export interface HangyezhikuObj {
+  id: string | number;
+  title: string;
+  imgPath: string;
+  author: string;
+  content: string;
 }
-
+export interface homeList{
+  firstModel: HangyezhikuObj[];
+  twoModel: HangyezhikuObj[];
+  threeModel: HangyezhikuObj[];
+}

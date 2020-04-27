@@ -1,5 +1,6 @@
 
-import React, { Component, Suspense } from "react";
+import React, { Component } from "react";
+import { Connect } from "hoc/Connect";
 import "sass/tupu.scss";
 import CategoryBox from "components/stands/CategoryBox";
 import TupuFigureNewsList from "components/stands/TupuFigureNewsList";
@@ -7,7 +8,7 @@ import TupuTrList from "components/stands/TupuTrList";
 import SwiperBox from "components/stands/SwiperBox";
 import Crumbs from "components/stands/Crumbs";
 
-export default class chanpintupu extends Component {
+class ChanpintupuObj extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -134,7 +135,7 @@ export default class chanpintupu extends Component {
     };
   }
   componentDidMount () {
-
+    this.props.getCanPinList({current: 1,name: 0})
   }
 
   componentWillUnmount () {
@@ -200,3 +201,9 @@ export default class chanpintupu extends Component {
     );
   }
 }
+
+export default Connect({
+  name: 'canpintupu',
+  need: [],
+  func: ['getCanPinList'],
+}, ChanpintupuObj);

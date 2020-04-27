@@ -86,6 +86,42 @@ export  function subContent(str,max) {
     }else {
       return noSpance;
     }
-  }
+}
 
+//首页行业智库模块数据过滤
+export function sliceHomeModel (list,noTwo) {
+    list.map((item) => {
+        item.id = (item.miroclassId || item.reportId || item.graphId)
+        item.title = (item.graphTitle || item.reportTitle || item.miroclassTitle)
+        item.imgPath = (item.graphPath || item.reportPath || item.miroclassPicPath)
+        item.author=item.miroclassSpeaker
+        item.content = item.content
+    })
+    let firstModel = list.slice(0, 1);
+    let twoModel=[]
+    let threeModel=[]
+    if (noTwo) {
+       twoModel = []
+       threeModel = [list.slice(1, 5), list.slice(5, 9), list.slice(9, 13)]
+    }else{
+       twoModel = list.slice(1, 3)
+       threeModel = [list.slice(3, 7), list.slice(7, 11), list.slice(11, 15)]
+    }
+    let NewObj = {
+        firstModel,
+        twoModel,
+        threeModel
+    }
+    return NewObj
+}
+
+//首页热门图谱和报告数据清洗
+export function sliceHomeHotModel (list) {
+    list.map((item) => {
+        item.id = ( item.reportId || item.graphId)
+        item.title = (item.graphTitle || item.reportTitle )
+        item.imgPath = (item.graphPath || item.reportPath)
+    })
+    return list
+}
 

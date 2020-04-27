@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import Banner from "./Banner"; //轮播图
 import NewsLeftModules from "./NewsLeftModules"; //首页左侧全部列表
 import NewsRightModules from "./NewsRightModules"; //首页右侧全部列表
@@ -25,10 +26,18 @@ interface PropsTypes {
   initRight: Function;
   initFooterAlls: Function;
   initChanpintupu: Function;
+  initKeTang:Function;
+  initBaoGao:Function;
+  initHotBaoGao: Function;
+  initHotTupu: Function;
   leftAlls: HomeTypes.LeftRightNews[];
   rightAlls: Array<HomeTypes.RightNews[]>;
   footerAlls: Array<Swiper.ImgObj[]>;
-  chanpinTupuAlls: Array<HomeTypes.ChanPinTuPu[]>;
+  chanpinTupuAlls: Array<HomeTypes.HomeZhiKu[]>;
+  YJBGAlls: Array<HomeTypes.HomeZhiKu[]>;
+  LTWKTAlls: Array<HomeTypes.HomeZhiKu[]>;
+  HotBao: Array<HomeTypes.HomeHot[]>;
+  HotTupu: Array<HomeTypes.HomeHot[]>;
 }
 
 interface State {
@@ -44,10 +53,14 @@ class Home extends React.Component<PropsTypes, State> {
   }
 
   componentDidMount() {
-    // this.props.initLeft();
+    this.props.initLeft();
     this.props.initRight();
-    // this.props.initFooterAlls();
+    this.props.initFooterAlls();
     this.props.initChanpintupu()
+    this.props.initKeTang()
+    this.props.initBaoGao()
+    this.props.initHotBaoGao()
+    this.props.initHotTupu()
   }
 
   // 首页弹窗广告
@@ -64,7 +77,7 @@ class Home extends React.Component<PropsTypes, State> {
   }
 
   render() {
-    const { leftAlls, rightAlls, footerAlls } = this.props;
+    const { leftAlls, rightAlls, footerAlls, chanpinTupuAlls, LTWKTAlls, YJBGAlls,HotBao,HotTupu} = this.props;
     return (
       <div>
         <div className="home-box wrapper">
@@ -116,24 +129,24 @@ class Home extends React.Component<PropsTypes, State> {
               <div className="module-section">
                 <div className="model">
                   <div className="header">
-                    <a href="/" className="view-more">多</a>
+                    <Link to="/stands/chanpintupu" className="view-more">多</Link>
                     <h3>产品谱图</h3>
                   </div>
-                  <SectionLayoutA />
+                  <SectionLayoutA lists={chanpinTupuAlls} linkUrl="/stands/chanpintupuDetail" />
                 </div>
                 <div className="model">
                   <div className="header">
-                    <a href="/" className="view-more">多</a>
+                    <Link to="/stands/yanjiubaogao" className="view-more">多</Link>
                     <h3>研究报告</h3>
                   </div>
-                  <SectionLayoutB />
+                  <SectionLayoutB lists={YJBGAlls} linkUrl="/stands/yanjiubaogaoDetail"/>
                 </div>
                 <div className="model">
                   <div className="header">
-                    <a href="/" className="view-more">多</a>
+                    <Link to="/stands/weiketang" className="view-more">多</Link>
                     <h3>雷霆微课堂</h3>
                   </div>
-                  <SectionLayoutA />
+                  <SectionLayoutA lists={LTWKTAlls} linkUrl="/stands/weiketangDetail"/>
                 </div>
               </div>
 
@@ -150,8 +163,14 @@ class Home extends React.Component<PropsTypes, State> {
                     <a href="/" className="view-more">多</a>
                     <h3>热门图谱</h3>
                   </div>
-                  <SideFigureNews />
-                  <NewListTwo />
+                  {
+                    !!HotTupu.length && HotTupu.map((item,index)=>{
+                      if (index===0) {
+                        return (<SideFigureNews List={item} key={`id_${index}`} />)
+                      }
+                    })
+                  }
+                  <NewListTwo Lists={HotTupu} />
                 </div>
                 <div className="ad-box">
                   <a href="/">
@@ -163,8 +182,14 @@ class Home extends React.Component<PropsTypes, State> {
                     <a href="/" className="view-more">多</a>
                     <h3>热门研报</h3>
                   </div>
-                  <SideFigureNews />
-                  <NewListTwo />
+                  {
+                    !!HotBao.length && HotBao.map((item, index) => {
+                      if (index === 0) {
+                        return (<SideFigureNews List={item} key={`id_${index}`} />)
+                      }
+                    })
+                  }
+                  <NewListTwo Lists={HotBao} />
                 </div>
               </div>
 
@@ -225,5 +250,5 @@ class Home extends React.Component<PropsTypes, State> {
 export default Connect({
   name: 'homeStore',
   need: [],
-  func: ['initLeft', 'initRight', 'initFooterAlls','initChanpintupu'],
+  func: ['initLeft', 'initRight', 'initFooterAlls', 'initChanpintupu', 'initKeTang', 'initBaoGao', 'initHotBaoGao','initHotTupu'],
 }, Home);

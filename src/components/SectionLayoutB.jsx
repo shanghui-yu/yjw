@@ -1,30 +1,45 @@
 // 404 路由错误的页面
 import React, { useEffect } from "react";
-import { withRouter } from 'react-router-dom';
-import NewListTwo from './newListTwo'
-function SectionLayoutA (props) {
+import { withRouter, Link } from 'react-router-dom';
 
+function SectionLayoutA (props) {
+  let { firstModel, threeModel } = props.lists
   return (
     <div className="section-layout-b clearfix">
-      <div className="section-pictures-group">
-        <a href="/" title="点击查看详情" className="figure">
-          <img src="https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200402-114-rc-upload-1585793798104-87.png" alt="" />
-        </a>
-        <a href="/" title="点击查看详情" className="caption">
-           泸山山火复燃威胁城区 四川消防救援支队彻夜阻击火势
-        </a>
-        <div className="description">
-          <div className="date">
-            <span className="author">超级无敌美少女</span>
-            2020-04-02 11:37:42
-          </div>
-          <p>4月2日，北京青年报记者从四川省消防救援总队，4月1日晚20时许，泸山新产生3公里的火线并向山下蔓延，火线绵延数公里，紧邻周边建筑。四川省消防救援总队组织11个消防救援支队、500余名指战员、91辆消防车在20余处重点场所分点布控，阻击山火。</p>
-        </div>
-      </div>
+      {
+        !!firstModel.length && firstModel.map((item, index) => {
+          return (
+            <div className="section-pictures-group" key={`id_${index}`}>
+              <Link to={props.linkUrl + '/' + item.graphId} className="figure">
+                <img src={item.imgPath} alt="" />
+              </Link>
+              <Link to={props.linkUrl + '/' + item.graphId} title="点击查看详情" className="caption">{item.graphTitle}</Link>
+              <div className="description">
+                <div className="date">
+                  <span className="author">{item.author}</span>{item.createTime}</div>
+                <p>{item.content}</p>
+              </div>
+            </div>
+          )
+        })
+      }
+      
         <div className="section-lists-group">
-          <NewListTwo />
-          <NewListTwo />
-          <NewListTwo />
+        {
+          !!threeModel.length && threeModel.map((item, index) => {
+            return (
+              <ul className="news-list" key={`id_${index}`}>
+                {!!item.length && item.map((newItem, inx) => {
+                  return (
+                    <li key={`new_${inx}`}>
+                      <Link to={props.linkUrl + '/' + newItem.Id}>{newItem.title}</Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            )
+          })
+        }
         </div>
     </div>
   );

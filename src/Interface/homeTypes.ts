@@ -10,6 +10,11 @@ export interface LeftRightNews extends types.NewsListCommon {
 export interface RightNews extends types.NewsListCommon {
     list: [] | types.NewsListObj[]
 }
-export interface ChanPinTuPu extends types.NewsListCommon {
-    list: [] | types.ChanpintupuListObj[]
+export interface HomeZhiKu extends types.homeList {
+    firstModel: types.HangyezhikuObj[];
+    twoModel: types.HangyezhikuObj[];
+    threeModel: types.HangyezhikuObj[];
+}
+export interface HomeHot extends types.HangyezhikuObj {
+    list: [] | types.HangyezhikuObj[]
 }

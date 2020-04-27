@@ -1,9 +1,9 @@
 import Api from "./api";
-import { sliceArr } from "utils/base";
+import { sliceArr, sliceHomeModel, sliceHomeHotModel} from "utils/base";
 import * as List from "Interface/commonList";
 import * as Swiper from "Interface/commonSwiper";
 import * as HomeTypes from "Interface/homeTypes";
-
+var APIURL ="http://localhost:3001"
 // 列表页
 class HomeApis extends Api {
   constructor() {
@@ -116,12 +116,42 @@ class HomeApis extends Api {
   }
   //获取首页产品图谱
   getChanpinTupuInfo() {
-    return this.post("/backend/graph/queryAllGraphWithSort").then(({ data }) => {
+    return this.post(`${APIURL}/backend/graph/queryAllGraphWithSort`).then(({ data }) => {
       //进行截取
-      const list = data.list.records
-      console.log(list,3434);
-      
-      return list;
+      let records = data.list.records
+      return sliceHomeModel(records)
+    });
+  }
+  //获取首页研究报告
+  getBaoGaoInfo() {
+    return this.post(`${APIURL}/backend/report/queryAllReportWithSort`).then(({ data }) => {
+      //进行截取
+      let records = data.list.records
+      return sliceHomeModel(records, 'baogao')
+    });
+  }
+  //获取首页雷霆微课堂
+  getKeTangInfo() {
+    return this.post(`${APIURL}/backend/miroclass/queryAllMiroclassWithSort`).then(({ data }) => {
+      //进行截取
+      let records = data.list.records
+      return sliceHomeModel(records)
+    });
+  }
+  //获取首页热门图谱
+  getHotTupuInfo() {
+    return this.post(`${APIURL}/backend/graph/queryAllHotGraphWithSort`).then(({ data }) => {
+      //进行截取
+      let records = data.list.records
+      return sliceHomeHotModel(records)
+    });
+  }
+  //获取首页热门研究报告
+  getHotBaoGaoInfo() {
+    return this.post(`${APIURL}/backend/report/queryAllHotReportWithSort`).then(({ data }) => {
+      //进行截取
+      let records = data.list.records
+      return sliceHomeHotModel(records)
     });
   }
 }

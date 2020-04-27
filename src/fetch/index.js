@@ -19,7 +19,7 @@ function fetch(url, data, methods, mes, options) {
     }
     instance[methods](url, obj, options)
       .then(({ data }) => {
-        if (data.code === 200) {
+        if (data.code === 200 || data.success) {
           if (mes) message("success", data.msg);
           resolve(data);
         } else if (data.code === 400) {
