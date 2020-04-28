@@ -99,7 +99,7 @@ const routers =[
                 component: ChanPinTuPu,
             },
             {
-                path: '/stands/chanpintupuDetail',
+                path: '/stands/chanpintupuDetail/:id',
                 component: ChanPinTuPuDetail,
             },
             {
@@ -107,11 +107,11 @@ const routers =[
                 component: YanJiuBaoGao
             },
             {
-                path: '/stands/yanjiubaogaoList/:type',
+                path: '/stands/yanjiubaogaoList/:reportType/:name',
                 component: YanJiuBaogaoList
             },
             {
-                path: '/stands/yanjiubaogaoDetail',
+                path: '/stands/yanjiubaogaoDetail/:reportType/:id',
                 component: YanJiuBaogaoDetail
             },
             {

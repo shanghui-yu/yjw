@@ -9,14 +9,15 @@ export default class TupuFigureNewsList extends Component {
   }
  
   render () {
+    let { ItemInfo, linkUrl } = this.props
     return (
       <li>
-        <Link to={this.props.ItemInfo.link} className="figure">
-          <img src={this.props.ItemInfo.img} alt="" />
+        <Link to={`${linkUrl}/${ItemInfo.graphId}`} className="figure">
+          <img src={ItemInfo.imgPath} alt="" />
         </Link>
-        <Link to={this.props.ItemInfo.link} className="figcaption">{this.props.ItemInfo.content}</Link>
-        <p>所属行业：{this.props.ItemInfo.tabs}</p>
-        <p>下载量：{this.props.ItemInfo.total}</p>
+        <Link to={`${linkUrl}/${ItemInfo.graphId}`} className="figcaption">{ItemInfo.content}</Link>
+        <p>所属行业：{ItemInfo.graphIndustryCategory}</p>
+        <p>下载量：{ItemInfo.graphClick}</p>
       </li>
     );
   }

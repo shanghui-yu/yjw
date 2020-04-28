@@ -3,7 +3,8 @@ import "sass/weiketang.scss";
 import ImgListBox from "components/stands/ImgListBox";
 import CategoryBox from "components/stands/CategoryBox";
 import Crumbs from "components/stands/Crumbs";
-export default class WeiKeTangList extends Component {
+import { Connect } from "hoc/Connect";
+class WeiKeTangList extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -129,3 +130,8 @@ export default class WeiKeTangList extends Component {
     );
   }
 }
+export default Connect({
+  name: 'weketangStore',
+  need: [],
+  func: [],
+}, WeiKeTangList);

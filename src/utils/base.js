@@ -124,4 +124,18 @@ export function sliceHomeHotModel (list) {
     })
     return list
 }
+// 过滤数据
+export function filterCategory (data) {
+    let { categoryList } = data
+    let newCategoryList = {}
+    categoryList.forEach(item => {
+        if (newCategoryList[item.columns]) {
+            newCategoryList[item.columns].push(item)
+        } else {
+            newCategoryList[item.columns] = [item]
+        }
+    })
+    data.category = newCategoryList
+    return data
+}
 

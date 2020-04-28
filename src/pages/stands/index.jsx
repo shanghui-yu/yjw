@@ -15,9 +15,9 @@ export default class RootHome extends Component {
     const { child, location } = this.props;
     return (
       <Suspense fallback={<Loading />} >
-        <MyHeader routeName={location.pathname} allNone='stand' />
+        {/* <MyHeader routeName={location.pathname} allNone='stand' /> */}
         <RouterViews routes={child} />
-        <MyFooter routeName={this.props.location.pathname} />
+        {/* <MyFooter routeName={this.props.location.pathname} /> */}
       </Suspense>
     );
   }

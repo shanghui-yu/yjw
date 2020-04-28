@@ -12,120 +12,6 @@ class ChanpintupuObj extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      newKecheng: [
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理2',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理3',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理2',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理3',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理2',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理3',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-      ],
-      category: [
-        {
-          label: '行业分类',
-          tabs: [
-            {
-              name: '企业介绍',
-              path: '/'
-            },
-            {
-              name: '企业介绍',
-              path: '/'
-            },
-          ]
-        },
-        {
-          label: '行业类型',
-          tabs: [
-            {
-              name: '企业介绍',
-              path: '/'
-            },
-            {
-              name: '企业介绍',
-              path: '/'
-            }
-          ]
-        }
-      ],
-      tupuList:[
-        {
-          link: '/stands/chanpintupuDetail',
-          img:'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          content:'旧恨又添新仇！日韩贸易对抗或重新定义',
-          tabs:'防护用品',
-          total:'100'
-        },
-        {
-          link: '/stands/chanpintupuDetail',
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          content: '旧恨又添新仇！日韩贸易对抗或重新定义',
-          tabs: '防护用品',
-          total: '100'
-        },
-      ],
-      TableItem:[
-        {
-          td1:{
-            link:'/stands/chanpintupuDetail',
-            img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-            title: '收钱不办事，违规返还6000万 出让金区委书记“借”......',
-            content: '2019年6月5日，安庆市宜秀区原琪受贿案二审开庭，安庆市......',
-          },
-          td2: '防护用品',
-          td3: '2020/1/1',
-          td4: '完整版',
-          td5: '100',
-        },
-        {
-          td1: {
-            link: '/stands/chanpintupuDetail',
-            img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-            title: '收钱不办事，违规返还6000万 出让金区委书记“借”......',
-            content: '2019年6月5日，安庆市宜秀区原琪受贿案二审开庭，安庆市......',
-          },
-          td2: '防护用品',
-          td3: '2020/1/1',
-          td4: '完整版',
-          td5: '100',
-        }
-      ],
       crumbsData: [
         {
           path: "/",
@@ -136,21 +22,21 @@ class ChanpintupuObj extends Component {
   }
   componentDidMount () {
     this.props.getCanPinList({current: 1,name: 0})
+    this.props.getHotTuPuLists()
   }
 
   componentWillUnmount () {
   }
 
   render () {
-    let { tupuList, category, TableItem, crumbsData} = this.state
+    let { canPinLists, hotLists} = this.props
     return (
       <div className="wrapper">
         <SwiperBox />
-        <Crumbs crumbsData={crumbsData}/>
+        <Crumbs crumbsData={this.state.crumbsData}/>
 
         {/* 分类入口 */}
-        <CategoryBox Content={category} />
-
+        {canPinLists.categoryList && (<CategoryBox Content={canPinLists.categoryList} />)}
         <div className="clearfix">
           <div className="module-section">
             <table className="tupu-list">
@@ -165,8 +51,8 @@ class ChanpintupuObj extends Component {
               </thead>
               <tbody>
                 {
-                  !!TableItem.length && TableItem.map((item,index)=>{
-                    return (<TupuTrList Detail={item} key={`id_${index}`} />)
+                  !!canPinLists.graphList && canPinLists.graphList.map((item,index)=>{
+                    return (<TupuTrList Detail={item} key={`id_${index}`} linkUrl="/stands/chanpintupuDetail" />)
                   })
                 }
               </tbody>
@@ -181,9 +67,9 @@ class ChanpintupuObj extends Component {
               </div>
               <ul className="tupu-figure-news-list">
                 {
-                  !!tupuList.length && tupuList.map((item,index)=>{
+                  !!hotLists.length && hotLists.map((item,index)=>{
                     return (
-                      <TupuFigureNewsList ItemInfo={item} key={`id_${index}`}/>
+                      <TupuFigureNewsList ItemInfo={item} key={`id_${index}`} linkUrl="/stands/chanpintupuDetail"/>
                     )
                   })
                 }
@@ -203,7 +89,7 @@ class ChanpintupuObj extends Component {
 }
 
 export default Connect({
-  name: 'canpintupu',
+  name: 'canpintupuStore',
   need: [],
-  func: ['getCanPinList'],
+  func: ['getCanPinList','getHotTuPuLists'],
 }, ChanpintupuObj);

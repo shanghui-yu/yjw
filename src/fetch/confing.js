@@ -35,7 +35,7 @@ instance.interceptors.request.use(
         ...config.headers,
         ...{
          device
-        }
+        },
       }
     };
     return newConfig;

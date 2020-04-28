@@ -1,6 +1,7 @@
 import React, { Component, Fragment, Suspense } from "react";
 import { Link } from "react-router-dom";
 import "sass/stands/category-box.scss";
+
 export default class CategoryBox extends Component {
   constructor(props) {
     super(props);
@@ -9,25 +10,21 @@ export default class CategoryBox extends Component {
   }
  
   render () {
-    let { Content } = this.props
+    let { Content ,LinkUrl} = this.props
     return (
       <div className="category-box">
-        {Content.length && Content.map((item,index)=>{
-          return(
-          <dl key={`id_${index}`}>
-              {item.label ?<dt>{item.label}：</dt>:null}
-            <dd>
-              {item.tabs.map((itemTwo,inx)=>{
-                if (itemTwo.path){
-                  return (<Link to={itemTwo.path} key={`id_${inx}`}>{itemTwo.name}</Link>)
-                }else{
-                  return (<Link>{itemTwo.name}</Link>) 
-                }
-              })}
-            </dd>
-          </dl>
-          )
-        })}
+        <dl>
+          <dt>行业分类：</dt>
+          <dd>
+            {!!Content.length&&Content.map((itemTwo, inx) => {
+              if (LinkUrl) {
+                return (<Link to={`${LinkUrl}/${itemTwo.categoryName}`} key={`id_${inx}`}>{itemTwo.categoryName}</Link>)
+              } else {
+                return (<Link to="" key={`id_${inx}`}>{itemTwo.categoryName}</Link>)
+              }
+            })}
+          </dd>
+        </dl>
       </div>
     );
   }

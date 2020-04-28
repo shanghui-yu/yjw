@@ -9,18 +9,17 @@ export default class SwiperBox extends Component {
   }
  
   render () {
+    let { DataList, LinkUrl} = this.props
     return (
       <li>
-        <Link to={this.props.DataList.path} className="figure">
-          <img src={this.props.DataList.img} alt="" />
+        <Link to={`${LinkUrl}/${DataList.reportId}`} className="figure">
+          <img src={DataList.reportPath} alt="" />
         </Link>
-        <Link to={this.props.DataList.path} className="caption">{this.props.DataList.title}</Link>
+        <Link to={`${LinkUrl}/${DataList.reportId}`} className="caption">{DataList.reportTitle}</Link>
         <div className="footer">
-          <span className="total">{this.props.DataList.total}</span>
+          <span className="total">{DataList.reportClick}</span>
           <div className="tags">
-            <span>卫生防疫</span>
-            <span>救援运载</span>
-            <span>动力燃料</span>
+            <span>{DataList.reportIndustryCategory}</span>
           </div>
         </div>
       </li>

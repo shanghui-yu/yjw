@@ -3,9 +3,9 @@ import "sass/weiketang.scss";
 import ImgListBox from "components/stands/ImgListBox";
 import CategoryBox from "components/stands/CategoryBox";
 import SwiperBox from "components/stands/SwiperBox";
+import { Connect } from "hoc/Connect";
 
-
-export default class WeiKeTang extends Component {
+class WeiKeTang extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -174,3 +174,9 @@ export default class WeiKeTang extends Component {
     );
   }
 }
+
+export default Connect({
+  name: 'weketangStore',
+  need: [],
+  func: [],
+}, WeiKeTang);

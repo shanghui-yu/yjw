@@ -1,125 +1,17 @@
 import React, { Component, Suspense } from "react";
+import { Link } from "react-router-dom";
 import "sass/yanjiubaogao.scss";
 import "sass/tupu.scss";
 import SwiperBox from "components/stands/SwiperBox";
-import TupuTrList from "components/stands/TupuTrList";
 import CategoryBox from "components/stands/CategoryBox";
 import TupuFigureNewsList from "components/stands/TupuFigureNewsList";
 import Crumbs from "components/stands/Crumbs";
-export default class YanJiuBaoGaoList extends Component {
+import { Connect } from "hoc/Connect";
+import moment from "moment";
+class YanJiuBaoGaoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      newKecheng: [
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理2',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理3',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理2',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理3',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理2',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-        {
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          title: '确诊菲佣曾去中环大会堂聚会导致感染了病毒 现在如何治理3',
-          total: '100',
-          tags: ['卫生防疫', '救援运载', '动力燃料']
-        },
-      ],
-      category: [
-        {
-          label: '行业类型',
-          tabs: [
-            {
-              name: '企业介绍',
-              path: '/stands/weiketangList'
-            },
-            {
-              name: '企业介绍',
-              path: '/stands/weiketangList'
-            },
-            {
-              name: '企业介绍',
-              path: '/stands/weiketangList'
-            }
-          ]
-        },
-        {
-          label: '行业类型',
-          tabs: [
-            {
-              name: '企业介绍',
-              path: '/stands/weiketangList'
-            },
-            {
-              name: '企业介绍',
-              path: '/stands/weiketangList'
-            },
-            {
-              name: '企业介绍',
-              path: '/stands/weiketangList'
-            }
-          ]
-        }
-      ],
-      TableItem: [
-        {
-          td1: {
-            link: '/stands/yanjiubaogaoDetail',
-            img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-            title: '收钱不办事，违规返还6000万 出让金区委书记“借”......',
-            content: '2019年6月5日，安庆市宜秀区原琪受贿案二审开庭，安庆市......',
-          },
-          td2: '299',
-          td3: '防护用品',
-          td4: '100页',
-          td5: '2020/1/1',
-          td6: '完整版',
-          td7: '100',
-        },
-        {
-          td1: {
-            link: '/stands/yanjiubaogaoDetail',
-            img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-            title: '收钱不办事，违规返还6000万 出让金区委书记“借”......',
-            content: '2019年6月5日，安庆市宜秀区原琪受贿案二审开庭，安庆市......',
-          },
-          td2: '299',
-          td3: '防护用品',
-          td4: '100页',
-          td5: '2020/1/1',
-          td6: '完整版',
-          td7: '100',
-        }
-      ],
       crumbsData: [
         {
           path: "/stands/yanjiubaogao",
@@ -130,27 +22,18 @@ export default class YanJiuBaoGaoList extends Component {
           value: "一张图看懂系列报告列表"
         }
       ],
-      tupuList: [
-        {
-          link: '/stands/chanpintupuDetail',
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          content: '旧恨又添新仇！日韩贸易对抗或重新定义',
-          tabs: '防护用品',
-          total: '100'
-        },
-        {
-          link: '/stands/chanpintupuDetail',
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          content: '旧恨又添新仇！日韩贸易对抗或重新定义',
-          tabs: '防护用品',
-          total: '100'
-        },
-      ],
+      page:1
     };
   }
   componentDidMount () {
     window.scrollTo(0, 0);
-    this.checkTypeList(this.props.match.params.type)
+    this.checkTypeList(this.props.match.params.reportType)
+    this.props.getBaoGaoType({
+      reportType: this.props.match.params.reportType,
+      current: this.state.page,
+      name:this.props.match.params.name
+    })
+    this.props.getHotBaoGaoInfo()
   }
 
   componentWillUnmount () {
@@ -175,14 +58,15 @@ export default class YanJiuBaoGaoList extends Component {
     }
   }
   render () {
-    let { crumbsData, category, TableItem, tupuList } = this.state
+    let { crumbsData } = this.state
+    let { baoGaoType, match,HotBaoGao} = this.props
     return (
       <div className="wrapper">
         <SwiperBox />
         <Crumbs crumbsData={crumbsData}></Crumbs>
 
         {/* 分类入口 */}
-        <CategoryBox Content={category} />
+        {baoGaoType.categoryList && (<CategoryBox Content={baoGaoType.categoryList} LinkUrl={`/stands/yanjiubaogaoList/${match.params.reportType}`} />)}
         <div className="clearfix">
           <div className="module-section">
             <table className="tupu-list">
@@ -199,8 +83,24 @@ export default class YanJiuBaoGaoList extends Component {
               </thead>
               <tbody>
                 {
-                  !!TableItem.length && TableItem.map((item, index) => {
-                    return (<TupuTrList Detail={item} key={`id_${index}`} />)
+                  baoGaoType.reportList && baoGaoType.reportList.records.map((item,index)=>{
+                    return (
+                      <tr key={`id_${index}`}>
+                        <td width="429">
+                          <div className="figure-news">
+                            <Link to={`/stands/yanjiubaogaoDetail/${match.params.reportType}/${item.reportId}`} className="figure">
+                              <img src={item.reportPath} alt="" />
+                            </Link>
+                            <Link to={`/stands/yanjiubaogaoDetail/${match.params.reportType}/${item.reportId}`} className="figcaption">{item.reportTitle}</Link>
+                            <p>{item.content}</p>
+                          </div>
+                        </td>
+                        <td>{item.reportIndustryCategory}</td>
+                        <td>{moment(item.reportUploadTime).format('YYYY/MM/DD')}</td>
+                        <td>{item.reportType}</td>
+                        <td>{item.reportClick}</td>
+                      </tr>
+                    )
                   })
                 }
               </tbody>
@@ -215,9 +115,9 @@ export default class YanJiuBaoGaoList extends Component {
               </div>
               <ul className="tupu-figure-news-list">
                 {
-                  !!tupuList.length && tupuList.map((item, index) => {
+                  !!HotBaoGao.length && HotBaoGao.map((item, index) => {
                     return (
-                      <TupuFigureNewsList ItemInfo={item} key={`id_${index}`} />
+                      <TupuFigureNewsList ItemInfo={item} key={`id_${index}`} linkUrl={`/stands/yanjiubaogaoDetail/${match.params.reportType}`} />
                     )
                   })
                 }
@@ -234,3 +134,8 @@ export default class YanJiuBaoGaoList extends Component {
     );
   }
 }
+export default Connect({
+  name: 'yanjiubaogaoStore',
+  need: [],
+  func: ['getBaoGaoType','getHotBaoGaoInfo'],
+}, YanJiuBaoGaoList);

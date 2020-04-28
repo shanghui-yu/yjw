@@ -2,8 +2,8 @@ import React, { Component, Suspense } from "react";
 import "sass/weiketang.scss";
 import ImgListBox from "components/stands/ImgListBox";
 import Crumbs from "components/stands/Crumbs";
-
-export default class WeiKeTangDetail extends Component {
+import { Connect } from "hoc/Connect";
+class WeiKeTangDetail extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -140,3 +140,8 @@ export default class WeiKeTangDetail extends Component {
     );
   }
 }
+export default Connect({
+  name: 'weketangStore',
+  need: [],
+  func: [],
+}, WeiKeTangDetail);

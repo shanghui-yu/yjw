@@ -1,30 +1,15 @@
 
 import React, { Component } from "react";
 import "sass/tupu.scss"
-import TupuFigureNewsList from "components/stands/TupuFigureNewsList";
+import { Connect } from "hoc/Connect";
 import { Link } from "react-router-dom";
 import Crumbs from "components/stands/Crumbs";
-
-export default class ChanpintupuDetail extends Component {
+import TupuFigureNewsList from "components/stands/TupuFigureNewsList";
+import moment from "moment";
+class ChanpintupuDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tupuList: [
-        {
-          link: '/stands/chanpintupuDetail',
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          content: '旧恨又添新仇！日韩贸易对抗或重新定义',
-          tabs: '防护用品',
-          total: '100'
-        },
-        {
-          link: '/stands/chanpintupuDetail',
-          img: 'https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png',
-          content: '旧恨又添新仇！日韩贸易对抗或重新定义',
-          tabs: '防护用品',
-          total: '100'
-        },
-      ],
       crumbsData: [
         {
           path: "/stands/chanpintupu",
@@ -39,30 +24,32 @@ export default class ChanpintupuDetail extends Component {
   }
   componentDidMount () {
     window.scrollTo(0, 0);
+    this.props.getHotTuPuLists()
+    this.props.getDetail(this.props.match.params.id)
   }
 
   componentWillUnmount () {
   }
 
   render () {
-    let { tupuList, crumbsData } = this.state
+    let { hotLists, tupuDetail } = this.props
     return (
       <div className="wrapper">
 
-        <Crumbs crumbsData={crumbsData} />
+        <Crumbs crumbsData={this.state.crumbsData} />
 
         <div className="clearfix">
           <div className="module-section">
             <div className="tupu-figure-intro">
               <div className="figure">
-                <img src="https://yjw-image.oss-cn-shenzhen.aliyuncs.com/yjwSit/20200306-115-rc-upload-1583460991685-89.png" alt=""/>
+                <img src={tupuDetail.graphPath} alt=""/>
               </div>
-              <h3>大城小爱：抗击疫情中一个武汉基层民警的独白,抗击疫情中一个武汉 基层民警的独白,抗击疫情中一个武汉基层民警的独白......</h3>
+              <h3>{tupuDetail.graphTitle}</h3>
               <div className="about-info">
-                <span>所属行业：防护用品</span>
-                <span>时间：2020/1/1</span>
-                <span>类型：完整版</span>
-                <span>下载量：100</span>
+                <span>所属行业：{tupuDetail.graphTitle}</span>
+                <span>时间：{moment(tupuDetail.graphUploadTime).format('YYYY/MM/DD')}</span>
+                <span>类型：{tupuDetail.graphIndustryCategory}</span>
+                <span>下载量：{tupuDetail.graphClick}</span>
               </div>
               <div className="tools">
                 <span className="button" id="download">下载</span>
@@ -74,9 +61,7 @@ export default class ChanpintupuDetail extends Component {
                 <span className="current">产品介绍</span>
               </div>
               <div className="contents">
-                <div>
-                  <p>上游新闻记者（爆料微信号：shangyounews）获悉，该视频是8月6日上午乐山市委书记彭琳在当地一桥梁上指导抗洪救灾工作时，对乐山市水务局局长金玉梅提出要求，“河道上的违章建筑一个星期之内给我拆完，拆不完我撤你”。</p>
-                </div>
+                <div dangerouslySetInnerHTML={{__html: tupuDetail.detailGraphIntroduction}} />
               </div>
             </div>
           </div>
@@ -88,9 +73,9 @@ export default class ChanpintupuDetail extends Component {
               </div>
               <ul className="tupu-figure-news-list">
                 {
-                  !!tupuList.length && tupuList.map((item, index) => {
+                  !!hotLists.length && hotLists.map((item, index) => {
                     return (
-                      <TupuFigureNewsList ItemInfo={item} key={`id_${index}`} />
+                      <TupuFigureNewsList ItemInfo={item} key={`id_${index}`} linkUrl="/stands/chanpintupuDetail" />
                     )
                   })
                 }
@@ -108,3 +93,9 @@ export default class ChanpintupuDetail extends Component {
     );
   }
 }
+
+export default Connect({
+  name: 'canpintupuStore',
+  need: [],
+  func: ['getDetail', 'getHotTuPuLists'],
+}, ChanpintupuDetail);
